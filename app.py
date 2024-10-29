@@ -10,7 +10,7 @@ def execute_command(command: str) -> None:
     subprocess.run(command, check=True)
 
 
-def infer(video_source, audio_target):
+def infer(video_source, audio_target, progress=gr.Progress(track_tqdm=True)):
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     
     output = f"results/result_{timestamp}.mp4"
